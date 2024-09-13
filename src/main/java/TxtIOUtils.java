@@ -15,9 +15,7 @@ public class TxtIOUtils {
                 contentBuilder.append("\n"); // 添加换行符，保留文件中的换行
             }
         } catch (IOException e) {
-            e.printStackTrace();
-            // 在实际应用中，应该处理这个异常，而不是直接打印堆栈信息
-            return null;
+            System.out.println("读取文件路径出错");
         }
         return contentBuilder.toString();
     }
@@ -30,8 +28,7 @@ public class TxtIOUtils {
                 writer.write(String.valueOf(content));
                 writer.newLine(); // 写入换行符，确保每个值在文件中独占一行
             } catch (IOException e) {
-                // 异常处理，打印异常信息
-                e.printStackTrace();
+                System.out.println("文件路径有误！未找到指定文件写入");
             }
         }
 }
